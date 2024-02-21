@@ -1682,6 +1682,7 @@ buildipfire() {
   lfsmake2 borgbackup
   lfsmake2 lmdb
   lfsmake2 pahole
+  lfsmake2 libbpf
   lfsmake2 knot
   lfsmake2 spectre-meltdown-checker
   lfsmake2 zabbix_agentd
