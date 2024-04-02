@@ -444,10 +444,10 @@ prepareenv() {
 
 	if [ "${ENABLE_RAMDISK}" = "on" ]; then
 		mkdir -p $BASEDIR/build/usr/src
-		mount -t tmpfs tmpfs -o size=8G,nr_inodes=1M,mode=1777 $BASEDIR/build/usr/src
+		mount -t tmpfs tmpfs -o size=32G,nr_inodes=1M,mode=1777 $BASEDIR/build/usr/src
 
 		mkdir -p ${BASEDIR}/build/tmp
-		mount -t tmpfs tmpfs -o size=4G,nr_inodes=1M,mode=1777 ${BASEDIR}/build/tmp
+		mount -t tmpfs tmpfs -o size=16G,nr_inodes=1M,mode=1777 ${BASEDIR}/build/tmp
 	fi
 
 	mkdir -p $BASEDIR/build/usr/src/{cache,config,doc,html,langs,lfs,log,src,ccache}
@@ -1681,6 +1681,7 @@ buildipfire() {
   lfsmake2 shairport-sync
   lfsmake2 borgbackup
   lfsmake2 lmdb
+  lfsmake2 pahole
   lfsmake2 knot
   lfsmake2 spectre-meltdown-checker
   lfsmake2 zabbix_agentd
